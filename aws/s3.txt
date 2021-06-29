@@ -1,0 +1,7 @@
+-- send to aws s3
+aws s3 sync /home/clients/images  s3://bucketname/clients/images
+aws s3 mv /dados/log/access_log.log  s3://bucketname/logs
+
+-- get from aws s3
+--- only png
+aws s3 cp s3://bucketname/clients/images /home/clients/images/ --exclude "*" --include "*.png" --recursive 

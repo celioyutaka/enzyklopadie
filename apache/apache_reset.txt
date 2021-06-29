@@ -1,0 +1,6 @@
+-- APACHE RESET
+apache2ctl configtest
+
+apache2ctl graceful
+-- or
+/etc/init.d/apache2 graceful

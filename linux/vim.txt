@@ -1,0 +1,54 @@
+#Press "i" for insert mode
+
+#Press "ESC" for command mode
+":q" -> quit
+":q!" -> quit without save
+":wq" -> write and quit (save and quit) or "ZZ"
+
+"u" -> undo
+"U" -> undo the whole line
+"ctrl+R" -> redo
+
+"A" (Append) -> append text at the end of line
+"dw" -> delete word -> move cursor to the beginning of the word to delete that word
+"2w" -> To word -> move cursor two words forward
+"3e" -> move cursor to the end of the third word foward ( change 3 for another number, 2e, 4e)
+
+"Ctrl F" -> Foward page
+"Ctrl B" -> Backward page
+"0" -> "Home" -> move cursor to start of the line
+
+"x" delete character
+"d2w" -> delete two words ( change 2 for another number, dw, d3w, d4w)
+"dd" -> delete the line
+"db" -> delete word backward
+"2dd" -> delete 2 lines (3dd, 4dd)
+"d$" -> delete from cursor to end of line
+"d^" -> delete to beggining of line
+
+"yy" -> yank current line
+"y$" -> yank current line from cursor
+"yw" -> yank from cursor to end of current word
+"5yy" -> yank 5 lines (2yy, 3yy)
+
+"p" -> put -> puts previously deleted text (ex: "dd" to delete line, then press "p" to put this line)
+P paste above cursor
+"2p paste from buffer 2 (there are 9)
+
+J Join next line down to the end of the current line
+
+"r" -> replace ONE char -> "re" will replace actual cursor position char with "e"
+"R" -> Replace more than one char, need to press ESC to stop
+"gg" -> move to start of the file
+"G" -> move to bottom of the file
+
+"%" -> when in (, [ or {, to find matching
+":%s/old/new/g" -> replace string (/g -> global)
+":6,10s/old/new/g" -> replace string specific range
+":/string" -> search forward pattern (press n -> next match)
+":?string" -> search backwards pattern  (press n -> next match)
+
+
+
+hjkl -> move cursor ????
+[n]G -> go to specifc line, 3G, 10G 200G

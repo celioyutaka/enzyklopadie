@@ -1,0 +1,42 @@
+//mount hd
+sudo mount /dev/sdb /dados
+
+//check disk usage
+df -h
+
+
+//Search for large files
+
+find /dados/ -size +500M
+find /var/www -size +1G
+find / -size +1G
+
+//Find which folder use most space
+sudo du -h /dados/backups/ | sort -rh | head -30
+sudo du -h / | sort -rh | head -30
+sudo du -h / | sort -rh | head -10
+
+
+//Delete files
+sudo rm /dados/backups/*/*2021-*.sql
+sudo rm /dados/backups/*2021-*.sql
+
+
+//Delete files with more than X days
+find /dados/backups/*.sql -type f -mtime +60  -delete
+
+
+
+
+
+//Increase disk size - ec2
+
+sudo resize2fs /dev/xvda1 obs: ext3, ext4
+sudo xfs_growfs /dev/xvda1 obs:xfs
+
+lsblk
+df -h
+
+//repair
+sudo xfs_repair /dev/xvda1
+sudo xfs_repair  -L /dev/xvda1

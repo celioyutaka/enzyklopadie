@@ -1,0 +1,40 @@
+S - Single Responsability Principle
+
+
+class Transaction{
+    public function calculateTotal(){...}
+    public function getItems(){...}
+    public function addItem(){...}
+    public function deleteItem(){...}
+    
+    public function printTransaction(){...}
+    public function printTransactionJSON(){...}
+
+    public function create(){...}
+    public function read(){...}
+    public function update(){...}
+    public function delete(){...}
+}
+
+
+
+
+
+class Transaction{
+    public function calculateTotal(){...}
+    public function getItems(){...}
+    public function addItem(){...}
+    public function deleteItem(){...}
+}
+    
+class TransactionViewer{
+    public function printTransaction(){...}
+    public function printTransactionJSON(){...}
+}
+
+class OrderRepository{
+    public function create(){...}
+    public function read(){...}
+    public function update(){...}
+    public function delete(){...}
+}

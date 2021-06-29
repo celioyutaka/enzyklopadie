@@ -1,0 +1,25 @@
+git init
+
+git add .
+
+git commit -m "init"
+
+git remote add origin https://github.com/user/repo.git
+
+git config --global credential.helper store
+
+git pull origin master --allow-unrelated-histories
+
+git checkout -B tabs
+
+git checkout master
+
+git merge tabs
+
+git rebase tabs
+
+git reset --hard
+
+git push origin master
+
+git log

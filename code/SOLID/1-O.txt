@@ -1,0 +1,34 @@
+O - OCP - Open-Closed Principle
+
+interface DrinkMachine{
+    public function addWater();
+}
+
+
+class CoffeMachine implements DrinkMachine{
+    public function addWater(){
+        return 150; // return 150ml
+    }
+}
+
+class TeaMachine implements DrinkMachine{
+    public function addWater(){
+        return 350; //return 350ml
+    }
+}
+
+class JuiceMachine implements DrinkMachine{
+    public function addWater(){
+        return 350; //return 350ml
+    }
+}
+
+class MachineApp{
+
+    protected $water; //water in ml
+
+    public function makeDrink(DrinkMachine $drink){
+        $this->water -= $drink->addWater(); // reduce water
+
+    }
+}

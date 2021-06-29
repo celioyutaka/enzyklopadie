@@ -1,0 +1,5 @@
+-- sync
+gsutil -m  rsync -r -x "config\.php$" /var/www/system/clients  gs://bucketname/clients/
+
+-- move
+gsutil -m  mv /data/log  gs://bucketname/log

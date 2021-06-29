@@ -1,0 +1,34 @@
+Sub RemoveCarriage()
+Dim Rng As Range
+Dim WorkRng As Range
+On Error Resume Next
+xTitleId = "KutoolsforExcel"
+Set WorkRng = Application.Selection
+Set WorkRng = Application.InputBox("Range", xTitleId, WorkRng.Address, Type:=8)
+For Each Rng In WorkRng
+    Rng.Value = Replace(Rng.Value, Chr(10), " ")
+Next
+End Sub
+
+
+
+
+//better
+
+
+ ALT + F11 
+ Insert > Module
+ F5
+
+
+
+Sub replaceallsheet()
+
+Worksheets.Select
+What = Chr(10)
+repl = " "
+Cells.Replace What:=What, Replacement:=repl, LookAt:=xlPart, _
+SearchOrder:=xlByRows, MatchCase:=False, SearchFormat:=False, _
+ReplaceFormat:=False
+End Sub
+

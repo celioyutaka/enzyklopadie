@@ -1,0 +1,40 @@
+-- FREE SPACE IN DISK
+-- FORCE RECOVERY
+
+
+sudo service mysql stop
+sudo nano /etc/mysql/my.cnf
+
+[mysqld]
+innodb_force_recovery = 1
+
+-- Uncomment the line "innodb_force_recovery"
+
+-- MOVE LOG FILES
+--- example 1
+sudo mv /dados/mysql/ib_logfile0 /dados/mysql/ib0_bkp
+sudo mv /dados/mysql/ib_logfile1 /dados/mysql/ib1_bkp
+
+--- example 2
+sudo mv /var/lib/mysql/ib_logfile0 /var/lib//mysql/ib0_bkp
+sudo mv /var/lib//mysql/ib_logfile1 /var/lib//mysql/ib1_bkp
+
+
+sudo service mysql start
+
+sudo service mysql stop
+
+sudo nano /etc/mysql/my.cnf
+
+[mysqld]
+#innodb_force_recovery = 1
+
+-- Comment the line "innodb_force_recovery"
+
+sudo service mysql start
+
+-- Innodb poll size not enough
+innodb_log_buffer_size = 4G
+
+-- check errors
+tail /var/log/mysql/error.log

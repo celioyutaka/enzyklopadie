@@ -1,0 +1,94 @@
+#print working directory
+pwd
+
+#change directory
+cd /var/www
+
+#create directory
+mkdir testdir
+
+#copy
+cp file1.ext file2.ext
+cp file1.ext /var/www/test
+
+#move or rename
+mv old.ext new.ext
+mv old.ext /var/www/test
+
+#create blank file
+touch file.txt
+
+#create/edit file
+nano file.txt
+
+#remove directory
+rm -r testdir
+
+#remove file - no confirm
+rm -f file.txt
+
+#concatenate
+cat file1 file2 > file3
+
+#tail
+
+
+#list -> list files of directory
+ls
+ls -l
+ls -lh
+ls -lha
+
+#find files and directories
+find . index.*
+find /var/www
+
+#grep
+grep blue colors.txt
+
+#show first lines
+head -n 5 bigfile.txt
+
+#show last lines
+tail -n log.txt
+
+#disk free
+df -h
+
+#disk usage
+du -h
+
+#change permission
+sudo chmod 755 -R /data/images
+
+#change user-group
+sudo chown -R user_name:group /data/images
+
+#symblolic link
+#create
+ln -s {source-filename} {symbolic-filename}
+ln -s file1 link1
+ln -s /var/www/test.com/index.php /home/cy/test.com/index.php
+
+#verify link
+ls -l file1 link1
+
+#process 
+htop
+ps ux
+
+#kill - request a program to stop
+kill -15 5329
+
+#kill - immediately (may lost data)
+kill -9 5329
+
+#ping
+ping google.com
+
+#wget
+wget test.com/install.zip
+
+#history
+history
+

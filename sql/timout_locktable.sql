@@ -1,0 +1,3 @@
+show engine innodb status;
+/*SEARCH FOR PROCESS ID THAT IS LOCKED, THEN KILL*/
+KILL 999999999;

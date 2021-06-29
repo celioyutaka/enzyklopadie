@@ -1,0 +1,59 @@
+tar Options: 
+-c : Creates Archive 
+-x : Extract the archive 
+-f : creates archive with given filename 
+-t : displays or lists files in archived file 
+-u : archives and adds to an existing archive file 
+-v : Displays Verbose Information 
+-A : Concatenates the archive files 
+-z : zip, tells tar command that creates tar file using gzip 
+-j : filter archive tar file using tbzip 
+-W : Verify a archive file 
+-r : update or add file or directory in already existed .tar file 
+
+
+Open a file: tar -xzvf [filename]
+extract zip verbose file
+
+View a file: tar -tvf [filename]
+display verbose file
+
+Create a file: tar -czvf [name_of_new_file] [files_or_folders_to_archive]
+create zip verbose file
+
+
+
+#COMPRESS
+#tar.gz or tgz
+tar -cvzf file.tar.gz /home/test/project
+tar -cvzf file.tgz /home/test/project
+
+
+#tar.bz2 tar.tb2
+tar -cvjf file.tar.bz2 /home/test/project
+tar -cvjf file.tar.tb2 /home/test/project
+
+#DECOMPRESS
+tar -xvf file.tar
+
+#to directory add -C 
+tar -xvf file.tar -C /home/test/project
+
+tar -xvf file.tar.gz
+tar -xvf file.tar.bz2
+
+#DECOMPRESS Specific file
+tar -xvf file.tar bash1.sh
+
+tar -zxvf file.tar.gz bash1.sh
+tar -xvf file.tar --wildcards '*.jpg'
+
+#LIST
+tar -tvf file.tar
+tar -tvf file.tar.gz
+tar -tvf file.tar.bz2
+
+
+#ADD File to tar
+tar -rvf file.tar new_image.jpg
+tar -rvf file.tar images_dir

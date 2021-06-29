@@ -1,0 +1,2 @@
+-- load sql from bucket 
+gcloud sql import sql db-project-test gs://bucketname/temp/backup_2021-02-11_11-27-13.sql.gz

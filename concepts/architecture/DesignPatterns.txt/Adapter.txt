@@ -1,0 +1,35 @@
+Adapter
+
+
+[YOUR SYSTEM]
+
+interface Notification
+- send()
+
+class EmailNotification implements Notification
+- send()
+
+class PushNotification implements Notification
+- send()
+
+class FirebaseApi
+- auth()
+- sendNotification()
+
+[Service]
+[LEGACY SYSTEM, OLD APP WITH NO ACCESS TO SOURCE CODE]
+
+
+------------------------------------------------------
+
+[...]
+function createAlert($notification Notification){
+    $notification->send('this is title', 'this is body text');
+}
+
+$emailNotification = new EmailNotification("test@test.com");
+createAlert($notification);
+
+$firebaseApi = new FirebaseApi('token_foo');
+$notification = new PushNotification($firebaseApi);
+createAlert($notification);

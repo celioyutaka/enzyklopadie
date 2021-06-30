@@ -1,0 +1,36 @@
+Use an Interface to build
+
+
+interface DrinkMachine
+- addWater()
+- prepareDrink()
+
+class CoffeMachine implements DrinkMachine
+- addWater()
+- prepareDrink()
+
+class TeaMachine implements DrinkMachine
+- addWater()
+- prepareDrink()
+
+
+
+class DrinkApp
+- makeDrink()
+
+
+
+class DrinkApp
+
+function makeDrink($drinkMachine DrinkMachine){
+    $drinkMachine->prepareDrink();
+}
+
+
+
+[...]
+$drinkApp = new DrinkApp();
+$drinkApp->makeDrink(new TeaMachine());
+$drinkApp->makeDrink(new CoffeMachine());
+
+

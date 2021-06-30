@@ -1,0 +1,5 @@
+In POSTMAN, enable and add SSL certificate
+- Under URL, click in Settings
+- Turn On - "Enable SSL certificate verification" and click in "Default: Settings"
+- Go to tab "Certificates"
+- Add .PEM file or .CRT and .KEY

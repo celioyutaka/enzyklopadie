@@ -1,0 +1,51 @@
+Call database once or call database for each item
+example 1: Orders has 100 items
+
+Code 1 -> Will call database 1000 times
+    if each request takes 0.01s, it will take 10 seconds in total
+
+Code 2 -> Will call database one time
+    if this one request takes 5s, it will be faster
+
+[consider: 
+- RAM availability (number of Rows)
+- CPU
+- Time (does it need to be so fast?)
+- Network bandwidth
+- Price per request (like an external paid API)
+- Use Cache
+]
+
+
+
+
+---------------------------------------------------------------
+CODE 1
+
+foreach ($orders as $order_id => $order){
+    $orderItems = OrderDB::searchById($order_id);
+
+    foreach ($orderItems as $item_id => $item){
+        echo $item['description']." - ".$item['price'];
+    }
+
+}
+
+
+
+
+---------------------------------------------------------------
+CODE 2
+
+//call database and return an array with order_id as keys
+$ordersItems = OrderDB::searchByIds(implode(',', array_keys($orders)));
+
+foreach ($orders as $order_id => $order){
+    $orderItems = $ordersItems[$order_id];
+    foreach ($orderItems as $item_id => $item){
+        echo $item['description']." - ".$item['price'];
+    }
+}
+
+
+

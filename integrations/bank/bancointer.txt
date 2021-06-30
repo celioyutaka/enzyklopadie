@@ -1,0 +1,108 @@
+Get certificate 
+- cert.crt (without password) and cert.key
+
+Export an cert.pem file using cert.crt
+- Use OpenSSL
+-- Windows
+--- Download && Install OpenSSL
+--- Go to c:\OpenSSL\bin
+--- Copy cert.crt to OpenSSL\bin
+--- Run this command in Terminal
+openssl x509 -in cert.crt -out cert.pem -outform pem
+
+To use in POSTMAN, enable and add SSL certificate
+- Under URL, click in Settings
+- Turn On - "Enable SSL certificate verification" and click in "Default: Settings"
+- Go to tab "Certificates"
+- Add .PEM file or .CRT and .KEY
+
+
+API
+
+curl --location --request POST 'https://apis.bancointer.com.br:8443/openbanking/v1/certificado/boletos' \
+--header 'accept: application/json' \
+--header 'content-type: application/json' \
+--header 'x-inter-conta-corrente: {ACCOUNT_NUMBER}' \
+--data-raw '{
+    "pagador": {
+        "cnpjCpf": "12345678909",
+        "nome": "put a name",
+        "email": "test@test.com",
+        "telefone": "987654321",
+        "cep": "3100000",
+        "numero": "123",
+        "complemento": "casa",
+        "bairro": "centro",
+        "cidade": "SAO PAULO",
+        "uf": "SP",
+        "endereco": "RUA TESTE",
+        "ddd": "12",
+        "tipoPessoa": "FISICA"
+    },
+    "dataEmissao": "2021-01-01",
+    "seuNumero": "1234567810",
+    "dataLimite": "SESSENTA",
+    "dataVencimento": "2021-12-31",
+    "mensagem": {
+        "linha1": "TEXTO 1"
+    },
+    "desconto1": {
+        "codigoDesconto": "NAOTEMDESCONTO",
+        "taxa": 0,
+        "valor": 0,
+        "data": ""
+    },
+    "desconto2": {
+        "codigoDesconto": "NAOTEMDESCONTO",
+        "taxa": 0,
+        "valor": 0,
+        "data": ""
+    },
+    "desconto3": {
+        "codigoDesconto": "NAOTEMDESCONTO",
+        "taxa": 0,
+        "valor": 0,
+        "data": ""
+    },
+    "valorNominal": 100,
+    "valorAbatimento": 0,
+    "multa": {
+        "codigoMulta": "PERCENTUAL",
+        "data": "2022-01-02",
+        "valor": 0,
+        "taxa": 5
+    },
+    "mora": {
+        "codigoMora": "TAXAMENSAL",
+        "data": "2022-01-02",
+        "valor": 0,
+        "taxa": 1
+    },
+    "cnpjCPFBeneficiario": "12345678000123",
+    "numDiasAgenda": "SESSENTA"
+}'
+
+
+
+
+-- CONSULT
+
+curl --location --request POST 'https://apis.bancointer.com.br:8443/openbanking/v1/certificado/boletos?filtrarPor=TODOS&dataInicial=2021-06-01&dataFinal=2021-07-21&ordenarPor=SEUNUMERO&page=1&size=10' \
+--header 'x-inter-conta-corrente: {ACCOUNT_NUMBER}'
+
+
+-- Get Billet in PDF
+
+curl --location --request GET 'https://apis.bancointer.com.br:8443/openbanking/v1/certificado/boletos/{NUMBER}/pdf' \
+--header 'content-type: application/json' \
+--header 'x-inter-conta-corrente: {ACCOUNT_NUMBER}'
+
+
+-- "dar baixa" CANCEL Billet?
+curl --location --request POST 'https://apis.bancointer.com.br:8443/openbanking/v1/certificado/boletos/{NUMBER}/baixas' \
+--header 'accept: application/json' \
+--header 'content-type: application/json' \
+--header 'x-inter-conta-corrente: {ACCOUNT_NUMBER}' \
+--data-raw '{
+  "codigoBaixa": "CLIENTE"
+}'

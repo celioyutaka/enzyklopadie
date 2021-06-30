@@ -1,0 +1,7 @@
+"Anti-pattern"
+
+Sole instance of a class
+
+- Database connection
+- Log
+- Lock file

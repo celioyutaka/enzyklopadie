@@ -1,0 +1,54 @@
+interface WriterFactory
+- createJsonWriter()
+- createCsvWriter()
+- createTxtWriter()
+
+class WinWriterFactory()
+- createJsonWriter()
+- createCsvWriter()
+- createTxtWriter()
+
+class UnixWriterFactory()
+- createJsonWriter()
+- createCsvWriter()
+- createTxtWriter()
+
+
+
+interface JsonWriter
+- write()
+
+class WinJsonWriter
+- write()
+
+class UnixJsonWriter
+- write()
+
+
+
+interface CsvWriter
+- write()
+
+class WinCsvWriter
+- write()
+
+class UnixCsvWriter
+- write()
+
+
+
+interface TxtWriter
+- write()
+
+class WinTxtWriter
+- write()
+
+class UnixTxtWriter
+- write()
+
+
+
+
+
+
+

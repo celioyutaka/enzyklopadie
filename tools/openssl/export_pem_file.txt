@@ -1,0 +1,8 @@
+Export an cert.pem file using cert.crt
+- Use OpenSSL
+-- Windows
+--- Download && Install OpenSSL
+--- Go to c:\OpenSSL\bin
+--- Copy cert.crt to OpenSSL\bin
+--- Run this command in Terminal
+openssl x509 -in cert.crt -out cert.pem -outform pem

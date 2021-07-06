@@ -1,0 +1,39 @@
+ {\displaystyle P(A\mid B)={\frac {P(B\mid A)P(A)}{P(B)}}}
+
+ P(A|B) = [ P(B|A) * P(A) ] / P(B)
+
+
+
+A person did a test for a diesease that was POSITIVE, this disease affects 1% of the population.
+The test has 90% accurate.
+Considering that the test was POSITIVE, what is the chance of this person really has this disease?
+
+
+10% of 99% => 9.9% results FALSE POSITIVE
+90% of  1% => 0.9% => results POSITIVE and have the disease
+
+(9.9 + 0.9) 10.8% chance of the test return POSITIVE
+
+10.8 -> 100
+0.9  -> X
+
+= 0.9*100 / 10.8 => 8.33%
+
+
+Example
+
+Total -> 1000 people
+99% of the population DOES NOT have the disease -> 990
+01% of the population DOES have the disease -> 10
+
+DOES NOT have the disease -> 990 Pessoas
+990*0.9 -> 891 returned "NEGATIVE"
+990*0.1 -> 99 returned "POSITIVE" - (FALSE POSITIVE)
+
+DOES have the disease -> 10 Pessoas
+10*0.9 -> 9 returned "POSITIVE"
+10*0.1 -> 1 retuned "NEGATIVE" - (FALSE NEGATIVE)
+
+(99+9) 108 retuned "POSITIVE"
+the chance of having tested POSITIVE and really have the disease is: 
+9/108 -> 0.083 -> 8.3%

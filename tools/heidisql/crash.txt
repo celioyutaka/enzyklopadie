@@ -1,0 +1,7 @@
+Access violation at address in module heidisql.exe. Write of address
+
+
+Kill all heidisql.exe process
+
+Go to C:\Users\YOURUSER\AppData\Roaming\HeidiSQL\Backups\
+Delete or Rename query-tab-2021-01-01_00-00-00-000.sql file from message

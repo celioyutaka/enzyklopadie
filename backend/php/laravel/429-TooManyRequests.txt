@@ -1,0 +1,17 @@
+In app/Http/Kernel.php Laravel has a default throttle limit for all api routes
+
+protected $middlewareGroups = [
+    ...
+    'api' => [
+        'throttle:60,1',
+    ],
+];
+
+
+
+Comment or increase it. 
+
+
+or run
+
+php artisan cache:clear

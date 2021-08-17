@@ -1,0 +1,52 @@
+value = 1
+print(value)
+print("Count", value)
+
+#print without ln
+print("Count", value, end="")
+
+numbers = []
+numbers = [1,2,4,5,6,7,8,9]
+
+numbers.append(10)
+numbers.append(11)
+numbers.insert(0, 6666)#index, value inserts at the front of the list
+numbers.insert(len(numbers), 999)# is equivalent to a.append(999)
+numbers.remove(0)#index
+numbers.pop(0)#index
+numbers.count(11)#times that this value appears in the list
+numbers.list()
+
+if value in numbers:
+    print("Value in numbers list")
+
+if value not in numbers:
+    print("Value not in numbers list")
+
+if value is None:
+    print("Value is None")
+
+if value is not None:
+    print("Value is not None")
+
+for number in numbers:
+    print(number, end=" ")
+
+if len(numbers) > 0:
+    print("has numbers")
+else:
+    print("empty")
+
+
+if value > 9000:
+    print("IT OVER 9000!")
+elif value < 0:
+    print("NEGATIVE")
+else:
+    print("Nah!")
+
+
+def calc(param):
+    while (param < 10):
+        param = param + 1
+

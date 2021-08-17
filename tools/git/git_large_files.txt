@@ -1,0 +1,5 @@
+Remove an large file in git
+GH001: Large files detected
+File X: this is larger than GitHub's recommended maximum file size of 50.00 MB or 100.00 MB
+
+git filter-branch -f --tree-filter 'rm -f /path/of/large/file.zip' HEAD --all

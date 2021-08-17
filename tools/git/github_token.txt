@@ -1,0 +1,13 @@
+cd ~
+rm .gitconfig
+rm .git-credentials
+
+git config --global --unset user.password
+
+git pull origin main
+
+-- git will ask for login/password
+
+replace password for token 
+
+git config --global credential.helper 'cache --timeout=500000'

@@ -1,0 +1,87 @@
+O(1)            -> constant - Lookup table
+O(log n)        -> Binary Search
+O(n)            -> Simple Search
+O(n * log n)    -> QuickSort
+O(n^2)          -> Selection Sort // for inside for
+O(n!)           -> Traveling salesperson
+
+
+
+
+
+
+O(1)
+
+void printFirst(int arr[]){
+    printf("%d\n", arr[0]);
+}
+
+
+O(n)
+void printAll(int arr[], int size){
+    for (int i =0; i < size, i ++)
+        printf("%d\n", arr[i]);
+}
+
+
+O(n^2)
+void printPairs(int arr[], int size){
+    for (int i =0; i < size, i ++)
+        for (int i =0; i < size, i ++)
+            printf("%d-%d\n", arr[i], arr[j]);
+}
+
+
+
+O(2^n)
+void fibonacci(int number{
+    if (number <= 1)
+        return number;
+    return fibonacci(number-2) + fibonacci(number-1)
+}
+
+O(log n)
+void printLog2(int value){
+    for (int i = 0; i < value, i = i * 2)
+        printf("%d\n", i);
+}
+
+O(n log n)
+void printN(int n){
+    int x = n;
+    while ( x > 0 ) { 
+        int y = x;
+        while ( y > 0 ) { 
+            y = y / 2;
+        } 
+        x--;
+    } 
+}
+n = 4
+x   y
+4   4// y = x
+4   2// x > 0 ->  y / 2
+4   1// x > 0 ->  y / 2
+4   0// y <= 0
+3   0//x--
+3   3// y = x
+3   1// x > 0 ->  y / 2
+3   0// y <= 0
+2   0//x--
+2   2// y = x
+2   1// x > 0 -> y /2
+2   0// y <= 0
+1   0//x--
+1   1// y = x
+1   0// x > 0 ->  y / 2
+1   0// y <= 0
+0   0//x--
+0   0//x < 0
+
+6 -> 3,2,1,0
+5 -> 2,1,0
+4 -> 2,1,0
+3 -> 1,0
+2 -> 1,0
+1 -> 0
+

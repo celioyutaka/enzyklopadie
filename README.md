@@ -14,5 +14,39 @@ Enzyklopädie - My personal Encyclopedia
 - Practice English
 - Whatever I'm learning
 
+### Dir and Subdir
+- backend
+- cloud
+- frontend
+- fundamentals
+- integrations
+- linux
+- sql
+- tools
+- backend\php
+- backend\python
+- backend\php\laravel
+- cloud\apache
+- cloud\aws
+- cloud\gcp
+- frontend\bootstrap
+- fundamentals\algorithm
+- fundamentals\architecture
+- fundamentals\big_O_notation
+- fundamentals\concepts
+- fundamentals\regex
+- fundamentals\statistics
+- fundamentals\algorithm\list
+- fundamentals\algorithm\validation
+- fundamentals\architecture\SOLID
+- integrations\bank
+- tools\excel
+- tools\git
+- tools\heidisql
+- tools\openssl
+- tools\postman
+- windows
+
+
 ## 
 >Shrek is love. Shrek is life.

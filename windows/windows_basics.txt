@@ -1,0 +1,2 @@
+list directories and subdirectories
+dir /s /b /o:n /ad > f.txt
